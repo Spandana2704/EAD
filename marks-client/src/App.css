@@ -1,0 +1,9 @@
+ /* App.css */
+ body { background: #f4f7fc; font-family: Arial, sans-serif; }
+ .form-container { max-width: 500px; background: #fff; margin: 40px auto; padding: 20px 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+ label { display:block; margin-top:10px; font-weight:600; color:#333; }
+ input[type='text'], select { width:100%; padding:8px; margin-top:5px; border-radius:6px; border:1px solid #ccc; }
+ .radio-group, .checkbox-group { display:flex; gap:12px; margin-top:8px; }
+ button { width:100%; padding:10px; background:#007bff; color:#fff; border:none; border-radius:8px; margin-top:20px;
+ cursor:pointer; }
+ .msg { text-align:center; font-weight:600; margin-bottom:12px; }
