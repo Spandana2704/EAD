@@ -6,7 +6,7 @@ import React, { useState } from 'react';
  name: '', rollNo: '', gender: '', department: '', section: '', skills: []
  });
  const [message, setMessage] = useState(null);
- const API = process.env.REACT_APP_API_URL || 'http://localhost:4000';
+ const API = process.env.REACT_APP_API_URL || 'https://student-registration-xahy.onrender.com';
  // Handlers for inputs and skills
  const handleChange = (e) => {
  setForm({ ...form, [e.target.name]: e.target.value });
