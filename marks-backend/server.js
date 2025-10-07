@@ -7,10 +7,18 @@
  app.use(cors());
  app.use(express.json());
  // MongoDB connection
- const MONGODB_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/studentsdb';
- mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
- .then(() => console.log(' MongoDB connected'))
- .catch(err => console.error(' DB error:', err));
+// MongoDB connection with debugging
+const MONGODB_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/studentsdb';
+
+console.log('Connecting to MongoDB with URI:', MONGODB_URI.replace(/mongodb\+srv:\/\/([^:]+):([^@]+)@/, 'mongodb+srv://USERNAME:PASSWORD@')); // Hide password in logs
+
+mongoose.connect(MONGODB_URI, { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true,
+  dbName: 'studentsdb'
+})
+.then(() => console.log('✅ MongoDB connected to database:', mongoose.connection.db.databaseName))
+.catch(err => console.error('❌ DB error:', err));
  // Schema
  const studentSchema = new mongoose.Schema({
  name: { type: String, required: true },
